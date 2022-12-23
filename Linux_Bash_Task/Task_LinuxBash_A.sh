@@ -1,15 +1,20 @@
 #!/bin/bash
 sudo apt-get update
 sudo apt-get install nmap
+sudo apt-get install 
 all()
 {
         echo "Dispays the IP addresse and symbolic names of all hosts in the current subnet:"
-        slep 5;
+        sleep 5
+        echo
+        
+        ;
 }
 target()
 {
         echo "Displays a list of open system TCP ports:"
-        slep 5
+        sleep 5
+
         ;
 }
 if [[ "$1" == "--all" ]]; then
