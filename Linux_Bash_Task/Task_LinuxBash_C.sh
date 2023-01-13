@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Path_syngig_directory="$1"
+Path_synging_directory="$1"
 Log_directory="$2"
 
 if [ ! -d $1 ]; then
@@ -10,20 +10,21 @@ elif [ ! -d $2 ]; then
 fi
 
 Log=~/backup.log
-for file in $(find $Path_syngig_directory -printf "%P\n") ; do
+
+for file in $(find $Path_synging_directory -printf "%P\n") ; do
 	if [ -a $Log_directory/$file ] ; then
-		if [ $Path_syngig_directory/$file -nt $Log_directory/$file ] ; then 
-			cp -r $Path_syngig_directory/$file $Log_directory/$file
+		if [ $Path_synging_directory/$file -nt $Log_directory/$file ] ; then 
+			cp -r $Path_synging_directory/$file $Log_directory/$file
 			echo "Copy $file $(date +'%d-%b-%Y %R')" >>$Log
 		fi
 	else
-		cp -r $Path_syngig_directory/$file $Log_directory/$file
+		cp -r $Path_synging_directory/$file $Log_directory/$file
 		echo "Copy $file $(date +'%d-%b-%Y %R')" >>$Log
 	fi
 done
 
 for file in $(find $Log_directory -printf "%P\n") ; do
-	if [ -a $Path_syngig_directory/$file ] ; then
+	if [ -a $Path_synging_directory/$file ] ; then
 		sleep 0
 	else 
     	rm -r $Log_directory/$file
