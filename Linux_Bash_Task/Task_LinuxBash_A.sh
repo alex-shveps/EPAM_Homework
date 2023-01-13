@@ -4,7 +4,6 @@ sudo apt-get update
 sudo apt-get install nmap
 sudo apt-get install net-tools
 
-
 key_all()
 {
         echo "Dispays the IP addresse and symbolic names of all hosts in the current subnet:"
