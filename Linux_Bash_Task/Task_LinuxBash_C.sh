@@ -6,7 +6,7 @@ Log_directory="$2"
 if [ ! -d $1 ]; then
         mkdir $1
 elif [ ! -d $2 ]; then
-        mkdir $2nan
+        mkdir $2
 fi
 
 Log=~/backup.log
