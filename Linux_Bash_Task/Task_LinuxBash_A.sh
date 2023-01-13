@@ -9,7 +9,7 @@ key_all()
 {
         echo "Dispays the IP addresse and symbolic names of all hosts in the current subnet:"
         inet_ip=`(ifconfig | grep broadcast | awk '{print $2}')`
-        sudo nmap -sn $inet_ip/20;
+        sudo nmap -sn "$inet_ip"/20;
 }
 
 key_target()
