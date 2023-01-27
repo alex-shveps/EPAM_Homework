@@ -4,7 +4,7 @@
 
 ### PART 1
 
-#### 1-2 Download MySQL server for your OS on VM and install MySQL server on VM.
+#### 1-2. Download MySQL server for your OS on VM and install MySQL server on VM.
 Use Ubuntu 20.04 
 ```` 
 sudo apt-get update 
@@ -12,7 +12,7 @@ sudo apt-get install mysql-server
 sudo systemctl start mysql.service
 ````
 ---
-#### 3-4 Select a subject area and describe the database schema and Create a database on the server through the console.
+#### 3-4. Select a subject area and describe the database schema and Create a database on the server through the console.
 Start work in MySQL  
 ````
 sudo mysql
@@ -25,11 +25,11 @@ USE city;
 Create tables
 ````MySQL
 CREATE TABLE areas (
-    id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     population INT NOT NULL,
     PRIMARY KEY (name)
 );
+
 CREATE TABLE hospitals (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
@@ -38,6 +38,7 @@ CREATE TABLE hospitals (
     areas VARCHAR(50) NOT NULL,
     PRIMARY KEY (id),
 );
+
 CREATE TABLE hotels (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
@@ -73,8 +74,31 @@ INSERT INTO hotels (name, phone_number, e_mail, areas)
     ('ISLAND', 00031003, 'island_staten@org.com', 'Staten Island');
 ````
 ---
-#### 6. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY.
+#### 6-7. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY and Execute other different SQL queries DDL, DML, DCL.
+````MySQL
+SELECT * FROM areas 
+    WHERE population > 2000000;
 ````
-
+![](where_population.png)
+---
+````MySQL
+SELECT name FROM hospitals
+    ORDER BY areas;
 ````
+![](order_by.png)
+---
+````MySQL
+SELECT SUBSTR(name,1,1) 
+    FROM hotels
+    GROUP BY SUBSTR(name,1,1);
+````
+![](group_by.png)
+--- 
+````MySQL
+ALETER TABLE areas 
+    ADD square VARCHAR(20);
+````
+![](add.png)
+---
+#### 8. Create a database of new users with different privileges. Connect to the database as a new user and verify that the privileges allow or deny certain actions.
 
