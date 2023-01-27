@@ -27,20 +27,54 @@ Create tables
 CREATE TABLE areas (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
+    population INT NOT NULL,
+    PRIMARY KEY (name)
 );
 CREATE TABLE hospitals (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
+    phone_number VARCHAR(10) NOT NULL,
+    e_mail  VARCHAR(50) NOT NULL,
+    areas VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id),
 );
 CREATE TABLE hotels (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
+    phone_number VARCHAR(10) NOT NULL,
+    e_mail  VARCHAR(50) NOT NULL,
+    areas VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id),
 );
 
 ````
 ---
 #### 5. Fill in tables.
+````MySQL
+INSER INTO areas (name, population)
+    VALUES 
+    ('Brooklyn', 2459000),
+    ('Staten Island', 441000),
+    ('Queens', 2233000),
+    ('Manhattan', 1525000),
+    ('Bronx', 1376000);
+
+INSERT INTO hospitals (name, phone_number, e_mail, areas)
+    VALUES
+    ('BELLEVUE HOSPITAL CENTER', 56546546, 'bellevue@ny.com', 'Manhattan'),
+    ('BETH ISRAEL MEDICAL', 34522200, 'beth_israel@gmail.com', 'Bronx'),
+    ('COLUMBIA', 10031005, 'columbia@ny.org.com', 'Queens'),
+    ('LENOX HILL', 44432232, 'lenox_hill@healthy.com', 'Brooklyn');
+
+INSERT INTO hotels (name, phone_number, e_mail, areas)
+    VALUES
+    ('HILLTON', 33446677, 'hilton@gmail.com', 'Manhattan'),
+    ('GRAND HOTEL', 77665544, 'grand_hotel@ny.com', 'Manhattan'),
+    ('ISLAND', 00031003, 'island_staten@org.com', 'Staten Island');
+````
+---
+#### 6. Construct and execute SELECT operator with WHERE, GROUP BY and ORDER BY.
+````
+
+````
 
