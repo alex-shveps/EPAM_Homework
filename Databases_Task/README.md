@@ -182,7 +182,7 @@ SHOW DATABASE;
 ---
 
 #### 12. Restore your database.
-````
+````MySQL
 sudo mysql
 CREATE DATABASE city_01;
 exit
@@ -193,5 +193,37 @@ SHOW TABLES;
 ````
 ![](restore_city_01.png)
 ---
+
+#### 13-16. Transfer your local database to RDS AWS.
+Create EC2 instance in AWS.
+Connect to instance.
+Update apt-get and install MySQL-Server
+Check DATABESE
+````MySQL
+CREATE DATABASE city;
+SHOW DATABASE;
+````
+![](creat_db_aws.png)
+---
+
+Connect to your database.
+````
+sudo mysql -u root -p city<bkup.sql
+````
+![](backup_aws.png)
+---
+
+Execute SELECT operator similar step 6.
+![](qerry_aws.png)
+---
+
+Create the dump of your database.
+````
+sudo mysql -u root -p city > bkup_aws.sql
+````
+![](backup_aws.png)
+---
+
+
 
 
