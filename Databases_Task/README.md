@@ -221,8 +221,55 @@ Create the dump of your database.
 ````
 sudo mysql -u root -p city > bkup_aws.sql
 ````
-![](backup_aws.png)
+![](dump_aws.png)
 ---
+
+### PART 3 - MongoDB
+
+#### 17. Create a database. Use the use command to connect to a new database (If it doesn't exist, Mongo will create it when you write to it).
+Use AWS RED HEAT OS.
+Connect to ES2.
+Install MongoDB
+````Bash
+cd /etc/yum.repos.d/
+sudo vi mongodb-org-6.0.repo
+    [mongodb-org-6.0]
+    name=MongoDB Repository
+    baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/6.0/x86_64/
+    gpgcheck=1
+    enabled=1
+    gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
+sudo yum install -y mongodb-org
+sudo yum install -y mongodb-org-6.0.3 mongodb-org-database-6.0.3 mongodb-org-server-6.0.3 mongodb-org-mongos-6.0.3 mongodb-org-tools-6.0.3
+````
+Start MongoDB
+````
+sudo systemctl start mongod
+````
+![](install_Mongo.png)
+
+````
+sudo mongosh
+show dbs;
+````
+![](show_dbs_mongo.png)
+
+Create DB test1
+````
+use test1;
+````
+---
+
+####  18-20. Create a collection. Use db.createCollection to create a collection. I'll leave the subject up to you. Run show dbs and show collections to view your database and collections, Create some documents,insert a couple of documents into your collection, use find() to list documents out.
+
+Create DB city
+````
+db.city.insertOne({areas: "Brooklyn", population: 2459000});
+show collections;
+db.city.insertMany([{areas: "Manhattan"}, {square: 23213213}]);
+db.city.find();
+````
+![](mongo_fill.png)
 
 
 
