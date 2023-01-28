@@ -101,4 +101,53 @@ ALETER TABLE areas
 ![](add.png)
 ---
 #### 8. Create a database of new users with different privileges. Connect to the database as a new user and verify that the privileges allow or deny certain actions.
+Create first user "Sara" with all privileges:
 
+````MySQL
+sudo mysql
+CREATE USER 'sara'@'localhost' IDENTIFIED BY '*****';
+GRANT ALL PRIVILEGES ON *.* TO 'sara'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+````
+Сheck some queries:
+````MySQL
+mysql -u sara -p
+````
+![](connect_sara.png)
+
+````MySQL
+SHOW GRANTS FOR 'sara'@'localhost';
+````
+![](grant_sara.png)
+
+````MySQL
+CREATE DATABASE test;
+SHOW DATABASES;
+````
+![](create_sara.png)
+---
+Create second user "Siri" with privileges (INSERT, SELECT):
+````MySQL
+CREATE USER 'siri'@'localhost' IDENTIFIED BY '*****';
+GRANT INSERT, SELECT on city.* TO 'siri'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'siri'@'localhost';
+````
+Сheck some queries:
+````MySQL
+mysql -u siri -p
+````
+![](connect_siri.png)
+
+````MySQL
+SHOW GRANTS FOR 'siri'@'localhost';
+````
+![](grant_siri.png)
+
+````MySQL
+CREATE DATABASE test1;
+SELECT * FROM city.hospitals;
+````
+![](select_siri.png)
+---
+#### 9.
