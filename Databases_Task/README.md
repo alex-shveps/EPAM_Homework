@@ -150,4 +150,48 @@ SELECT * FROM city.hospitals;
 ````
 ![](select_siri.png)
 ---
-#### 9.
+#### 9. Make a selection from the main table DB MySQL.
+````MySQL
+sudo mysql
+USE mysql;
+SHOW tables;
+SELECT * FROM user WHERE user = 'root' \G
+````
+![](select_db.png)
+---
+
+### PART 2
+
+#### 10. Make backup of your database.
+````
+mysqldump -u sara -p city>bkup.sql
+ls *.sql
+cat bkup.sql
+````
+![](backup_sql.png)
+---
+
+#### 11. Delete the table and/or part of the data in the table.
+````MySQL
+sudo mysql
+SHOW DATABASE;
+DROP DATABASE city;
+SHOW DATABASE;
+````
+![](drop_db.png)
+---
+
+#### 12. Restore your database.
+````
+sudo mysql
+CREATE DATABASE city_01;
+exit
+mysql -u sara -p city_01 <bkup.sql
+mysql -u sara -p
+USE DATABASE city_01;
+SHOW TABLES;
+````
+![](restore_city_01.png)
+---
+
+
