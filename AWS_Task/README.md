@@ -8,16 +8,16 @@
 ---
 
 ####  8. Create a snapshot of your instance to keep as a backup.
-
-![](snapshots_red_hat.png)
 ---
 ![](snapshots_red_hat_complete.png)
+---
 
 ####  9. Create and attach a Disk_D (EBS) to your instance to add more storage space. Create and save some file on Disk_D.
-
+---
 Create Disk_d
 ![](create_Disk_d.png)
 ---
+
 Attach Disk_D to my instance
 ````
 lsblk
@@ -57,6 +57,45 @@ ls -al /disk_d
 ````
 ![](attached_disk_chek_file.png)
 ---
+
+####  12. Register the domain name *.PP.UA and use it.
+
+![](domain_pp_ua.png)
+---
+
+####  13. Launch and configure a WordPress instance with Amazon Lightsail.
+
+Connect to instance and check password:
+````
+cat $HOME/bitnami_application_password
+````
+
+Enter a WordPress.
+
+![](enter_wp.png)
+
+Delete a WordPress instance.
+---
+
+####  14. Review the 10-minute Store and Retrieve a File. Repeat, creating your own repository.
+
+Create S3 buckets.
+
+Upload some file to buckets:
+
+![](upload_s3_bucket.png)
+---
+
+Create Dir "log" in s3 bucket:
+![](create_dir_s3.png)
+---
+
+####  15. Batch upload files to the cloud to Amazon S3 using the AWS CLI.Create a user AWS IAM, configure CLI AWS and upload any files to S3. 
+
+
+
+
+
 
 
 
