@@ -90,7 +90,39 @@ Create Dir "log" in s3 bucket:
 ![](create_dir_s3.png)
 ---
 
-####  15. Batch upload files to the cloud to Amazon S3 using the AWS CLI.Create a user AWS IAM, configure CLI AWS and upload any files to S3. 
+####  15. Batch upload files to the cloud to Amazon S3 using the AWS CLI.Create a user AWS IAM, configure CLI AWS and upload any files to S3.
+
+Create a user AWS IAM:
+
+![](iam_user.png)
+---
+
+Install  AWS CLI.
+Start PowerShell and write credentials.
+
+![](conncet_cli_aws.png)
+---
+
+Write some command to use S3:
+````
+aws s3 mb s3://my-first-backup-bucket-alex-shvets-lol
+````
+---
+![](create_S3_cli.png)
+---
+Delete s3 bucket:
+````
+aws s3api delete-bucket --bucket my-first-backup-bucket-alex-shvets-lol --region eu-central-1![]
+````
+(delete_s3.png)
+---
+Copy some file in another s3:
+````
+aws s3 cp "C:\Users\kazza\Downloads\squad.png"  s3://myfirstbucket.alex/
+````
+![](add_file_cli.png)
+---
+
 
 
 
