@@ -1,0 +1,24 @@
+[href="https://github.com/alex-shveps/EPAM_Homework"] {
+    color: rgb(0, 0, 0);
+}
+
+[href="https://drive.google.com/file/d/1bqw9WfrogYB7DXxvoCJPKF1ls4EwMwh6/view?usp=share_link"] {
+    color: rgb(0, 0, 0);
+}
+body{
+    background-color: rgb(74, 151, 151);
+}
+.wrapperERROR {
+    width: 100;
+    background-color: blue;
+}
+
+.index {
+    text-align: center;
+    color: rgb(229, 255, 0);
+}
+
+.error {
+    text-align: center;
+    color: rgb(255, 0, 0);
+}
